@@ -13,54 +13,71 @@
 
     <h1> Colorful Calculator </h1>
 
-    <div id="calculator">
+    <div id="container">
 
-      <div class="row display">
-        <div class="column" id="display-output">
-          <div class="column" id="display-history">987654</div>
-          0
+      <div id="calculator">
+
+        <div class="row display">
+          <div class="column" id="display-output">
+            <div class="column" id="display-history">987654</div>
+            0
+          </div>
         </div>
+
+        <div class="keypad">
+
+          <div class="row mac-1">
+            <div class="calc-btn column" id="calc-clear"> AC </div>
+            <div class="calc-btn column" id="calc-backspace"> &#8676; </div>
+            <div class="calc-btn column" id="calc-plusminus"> &#177; </div>
+            <div class="calc-btn operator-mac column" id="calc-divide"> &#247; </div>
+          </div>
+
+          <div class="row mac-2">
+            <div class="calc-btn num column" id="calc-7"> 7 </div>
+            <div class="calc-btn num column" id="calc-8"> 8 </div>
+            <div class="calc-btn num column" id="calc-9"> 9 </div>
+            <div class="calc-btn operator-mac column" id="calc-multiply"> &#215; </div>
+          </div>
+
+          <div class="row mac-3">
+            <div class="calc-btn num column" id="calc-4"> 4 </div>
+            <div class="calc-btn num column" id="calc-5"> 5 </div>
+            <div class="calc-btn num column" id="calc-6"> 6 </div>
+            <div class="calc-btn operator-mac column" id="calc-subtract"> &#8722; </div>
+          </div>
+
+          <div class="row mac-4">
+            <div class="calc-btn num column" id="calc-1"> 1 </div>
+            <div class="calc-btn num column" id="calc-2"> 2 </div>
+            <div class="calc-btn num column" id="calc-3"> 3 </div>
+            <div class="calc-btn operator-mac column" id="calc-add"> &#43;  </div>
+          </div>
+
+          <div class="row mac-5">
+            <div class="calc-btn num column" id="calc-0"> 0 </div>
+            <div class="calc-btn column" id="calc-decimal"> . </div>
+            <div class="calc-btn operator-mac column" id="calc-equals"> = </div>
+          </div>
+
+        </div> <!-- keypad -->
+
+      </div> <!-- calculator -->
+
+      <div class="radio-btn">
+        <p>this is where the radio buttons will go</p>
+        <form>
+          <input type="radio" name="color-theme" value="Option 1">Option 1
+          <br />
+          <input type="radio" name="color-theme" value="Option 2">Option 2
+          <br />
+          <input type="radio" name="color-theme" value="Option 3">Option 3
+          <br />
+          <input type="radio" name="color-theme" value="Option 4">Option 4
+        </form>
       </div>
 
-      <div class="keypad">
-
-        <div class="row mac-1">
-          <div class="calc-btn column" id="calc-clear"> AC </div>
-          <div class="calc-btn column" id="calc-backspace"> &#8676; </div>
-          <div class="calc-btn column" id="calc-plusminus"> &#177; </div>
-          <div class="calc-btn operator-mac column" id="calc-divide"> &#247; </div>
-        </div>
-
-        <div class="row mac-2">
-          <div class="calc-btn num column" id="calc-7"> 7 </div>
-          <div class="calc-btn num column" id="calc-8"> 8 </div>
-          <div class="calc-btn num column" id="calc-9"> 9 </div>
-          <div class="calc-btn operator-mac column" id="calc-multiply"> &#215; </div>
-        </div>
-
-        <div class="row mac-3">
-          <div class="calc-btn num column" id="calc-4"> 4 </div>
-          <div class="calc-btn num column" id="calc-5"> 5 </div>
-          <div class="calc-btn num column" id="calc-6"> 6 </div>
-          <div class="calc-btn operator-mac column" id="calc-subtract"> &#8722; </div>
-        </div>
-
-        <div class="row mac-4">
-          <div class="calc-btn num column" id="calc-1"> 1 </div>
-          <div class="calc-btn num column" id="calc-2"> 2 </div>
-          <div class="calc-btn num column" id="calc-3"> 3 </div>
-          <div class="calc-btn operator-mac column" id="calc-add"> &#43;  </div>
-        </div>
-
-        <div class="row mac-5">
-          <div class="calc-btn num column" id="calc-0"> 0 </div>
-          <div class="calc-btn column" id="calc-decimal"> . </div>
-          <div class="calc-btn operator-mac column" id="calc-equals"> = </div>
-        </div>
-
-      </div> <!-- keypad -->
-
-    </div> <!-- calculator -->
+    </div> <!-- container -->
 
     <script src="calculator.js"> </script>
 

@@ -38,6 +38,10 @@ body {
   border-radius: 7px 7px 0 0;
 }
 
+.radio-btn {
+  border: solid black 1px;
+}
+
 h1 {
   text-align: center;
   color: maroon;
@@ -48,6 +52,7 @@ h1 {
   margin: auto;
   width: 200px;
   box-shadow: 10px 10px 58px 8px rgba(82,82,82,1);
+  border-radius: 7px 7px 7px 7px
 }
 
 #calc-0 {
@@ -76,6 +81,12 @@ h1 {
   border-radius: 0 0 7px 0
 }
 
+#container {
+  display: flex;
+}
+
+
+
 /* ----- COLOR THEMES ----- */
 
 /* MAC */
@@ -86,7 +97,7 @@ h1 {
 }
 
 .operator-mac:hover {
-  background-color: darkgray;
+  background-color: rgb(77, 76, 77);
 }
 
 .mac-1 {
