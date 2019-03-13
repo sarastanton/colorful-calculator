@@ -4,18 +4,27 @@ let pendingVal;
 let evalStringArray = [];
 const btn = document.getElementsByClassName("calc-btn");
 
+Array.from(btn).forEach(button => button.addEventListener('click', (event) => updateDisplayVal(parseInt(event.target.innerText))) )
+
 updateDisplayVal = (clickObj) => {
-  let btnText = clickObj.target.innerText;
+  // let btnText = clickObj.target.innerText;
 
   if(displayVal === '0') {
     displayVal = '';
   }
 
-  displayVal += btnText;
+  displayVal += clickObj;
   document.getElementById("display-output").innerText = displayVal
 }
 
-Array.from(btn).forEach(button => button.addEventListener('click', (e) => updateDisplayVal(e)) )
+document.addEventListener('keydown', (event) => keydownFunction(parseInt(event.key)) )
+
+keydownFunction = (keyVal) => {
+  if(Number.isInteger(keyVal)) {
+    updateDisplayVal(keyVal)
+  }
+}
+
 
 
 // Color theme change
