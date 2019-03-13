@@ -40,6 +40,9 @@ body {
 
 .radio-btn {
   border: solid black 1px;
+  height: 175px;
+  align-self: center;
+  margin-left: 50px;
 }
 
 h1 {
@@ -83,6 +86,7 @@ h1 {
 
 #container {
   display: flex;
+  align-items: baseline;
 }
 
 
