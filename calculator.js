@@ -2,29 +2,43 @@
 let displayVal = '0';
 let pendingVal;
 let evalStringArray = [];
-const btn = document.getElementsByClassName("calc-btn");
 
-Array.from(btn).forEach(button => button.addEventListener('click', (event) => updateDisplayVal(parseInt(event.target.innerText))) )
+document.getElementById("display-output").innerText = displayVal
 
 updateDisplayVal = (clickObj) => {
-  // let btnText = clickObj.target.innerText;
-
   if(displayVal === '0') {
     displayVal = '';
   }
-
+  debugger
   displayVal += clickObj;
   document.getElementById("display-output").innerText = displayVal
+  debugger
 }
 
-document.addEventListener('keydown', (event) => keydownFunction(parseInt(event.key)) )
 
 keydownFunction = (keyVal) => {
-  if(Number.isInteger(keyVal)) {
-    updateDisplayVal(keyVal)
+  if(Number.isInteger(parseInt(keyVal))) {
+    updateDisplayVal(parseInt(keyVal))
+  } else if(keyVal == 'Delete') {
+    clearDisplay()
   }
 }
 
+clearDisplay = () => {
+  displayVal = '0';
+  pendingVal = undefined;
+  evalStringArray = [];
+  document.getElementById("display-output").innerText = displayVal
+  debugger
+}
+
+// EVENT LISTENERS
+const numBtn = document.getElementsByClassName("num");
+const clrBtn = document.getElementById("calc-clear")
+
+Array.from(numBtn).forEach(button => button.addEventListener('click', (event) => updateDisplayVal(parseInt(event.target.innerText))) )
+document.addEventListener('keydown', (event) => keydownFunction(event.key) )
+clrBtn.addEventListener('click', () => clearDisplay())
 
 
 // Color theme change
