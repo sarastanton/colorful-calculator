@@ -17,8 +17,8 @@ updateDisplayVal = (clickObj) => {
 }
 
 keydownFunction = (keyVal) => {
-  if(Number.isInteger(parseInt(keyVal))) {
-    updateDisplayVal(parseInt(keyVal))
+  if(Number.isInteger(parseFloat(keyVal))) {
+    updateDisplayVal(parseFloat(keyVal))
   } else {
     switch(keyVal) {
       case 'Delete':
@@ -61,7 +61,7 @@ addDecimal = () => {
 }
 
 flipSign = () => {
-  let displayInt = parseInt(displayVal)*-1;
+  let displayInt = parseFloat(displayVal)*-1;
   displayVal = displayInt.toString();
   updateDisplayWindow()
 }
@@ -89,7 +89,7 @@ performOperation = (clickObjId) => {
     case "calc-equals":
       console.log(clickObjId)
       evalStringArray.push(displayVal);
-      displayVal = eval(evalStringArray.join(' ')).toString();
+      displayVal = (Math.round(eval(evalStringArray.join(' '))*100000)/100000).toString();
       updateDisplayWindow();
       break;
   }
@@ -106,7 +106,7 @@ const decimal = document.getElementById("calc-decimal")
 const plusMinus = document.getElementById("calc-plusminus")
 
 Array.from(numBtn).forEach(button =>
-   button.addEventListener('click', (event) => updateDisplayVal(parseInt(event.target.innerText)))
+   button.addEventListener('click', (event) => updateDisplayVal(parseFloat(event.target.innerText)))
  )
 
 Array.from(operators).forEach(button =>
