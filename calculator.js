@@ -31,18 +31,14 @@ keydownFunction = (keyVal) => {
         addDecimal();
         break;
       case '+':
-        performOperation("calc-add");
-        break;
       case '-':
-        performOperation("calc-subtract");
-        break;
       case '*':
-        performOperation("calc-multiply");
-        break;
       case '/':
-        performOperation("calc-divide");
+        performOperation(keyVal);
         break;
-
+      case 'Enter':
+        performOperation("calc-equals");
+        break;
     }
   }
 }
@@ -89,7 +85,11 @@ performOperation = (clickObjId) => {
     case "calc-equals":
       console.log(clickObjId)
       evalStringArray.push(displayVal);
-      displayVal = (Math.round(eval(evalStringArray.join(' '))*100000)/100000).toString();
+      let calcVal = eval(evalStringArray.join(''));
+      displayVal = (Math.round(calcVal*100000)/100000);
+      console.log(evalStringArray);
+      console.log(displayVal);
+      evalStringArray = Array.from(displayVal)
       updateDisplayWindow();
       break;
   }
