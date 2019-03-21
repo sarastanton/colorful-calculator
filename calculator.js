@@ -1,11 +1,12 @@
 
 // CALCULATOR LOGIC
 let displayVal = '0';
-let pendingVal;
 let evalStringArray = [];
 
 updateDisplayWindow = () => {
-  document.getElementById("display-output").innerText = displayVal;
+  document.getElementById("display-output").innerText = displayVal.toLocaleString("en");
+  document.getElementById("display-history").innerText = evalStringArray;
+
 }
 
 updateDisplayVal = (clickObj) => {
@@ -17,8 +18,8 @@ updateDisplayVal = (clickObj) => {
 }
 
 keydownFunction = (keyVal) => {
-  if(Number.isInteger(parseFloat(keyVal))) {
-    updateDisplayVal(parseFloat(keyVal))
+  if(Number.isInteger(parseInt(keyVal))) {
+    updateDisplayVal(parseInt(keyVal))
   } else {
     switch(keyVal) {
       case 'Delete':
@@ -66,7 +67,6 @@ flipSign = () => {
 // OPERATOR FUNCTIONS
 clearDisplay = () => {
   displayVal = '0';
-  pendingVal = undefined;
   evalStringArray = [];
   updateDisplayWindow()
 }
@@ -77,18 +77,14 @@ performOperation = (clickObjId) => {
     case "-":
     case "*":
     case "/":
-      console.log(clickObjId)
       evalStringArray.push(displayVal);
       evalStringArray.push(clickObjId)
       displayVal = ' '
       break;
     case "calc-equals":
-      console.log(clickObjId)
       evalStringArray.push(displayVal);
       let calcVal = eval(evalStringArray.join(''));
       displayVal = (Math.round(calcVal*100000)/100000);
-      console.log(evalStringArray);
-      console.log(displayVal);
       evalStringArray = Array.from(displayVal)
       updateDisplayWindow();
       break;
@@ -106,8 +102,10 @@ const decimal = document.getElementById("calc-decimal")
 const plusMinus = document.getElementById("calc-plusminus")
 
 Array.from(numBtn).forEach(button =>
-   button.addEventListener('click', (event) => updateDisplayVal(parseFloat(event.target.innerText)))
- )
+  button.addEventListener('click', (event) =>
+    updateDisplayVal(parseInt(event.target.innerText))
+  )
+)
 
 Array.from(operators).forEach(button =>
    button.addEventListener('click', (event) => performOperation(event.target.id))
@@ -130,19 +128,22 @@ const row2 = document.getElementsByClassName("row-2")
 const row3 = document.getElementsByClassName("row-3")
 const row4 = document.getElementsByClassName("row-4")
 const row5 = document.getElementsByClassName("row-5")
+const column = document.getElementsByClassName("column")
 
-const radio = document.getElementsByName("color-theme")
+const radios = document.getElementsByName("color-theme")
 
-// radio.forEach(
-//   element => element.addEventListener('click', replaceClassNames(event))
-// )
-//
-// replaceClassNames(event) {
-//   switch() {
-//     case event.target.value === "":
-//     row1.className = ""
-//   }
-// }
+Array.from(radios).forEach(radio =>
+  radio.addEventListener('click', (event) => changeColor(event))
+)
 
+changeColor = (event) => {
+  switch(event.target.value) {
+    case
+  }
+}
+
+
+
+/////////////////////
 
 updateDisplayWindow();

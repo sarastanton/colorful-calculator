@@ -12,6 +12,7 @@ body {
   font-size: 26px;
   font-weight: 100;
   padding-top: 3px;
+  display: table-cell;
 }
 
 .calc-btn:hover {
@@ -25,11 +26,10 @@ body {
 }
 
 .column {
-  display: table-cell;
 }
 
 .display {
-  height: 80px;
+  height: 90px;
   text-align: right;
   border-left: 1px solid gray;
   border-right: 1px solid gray;
@@ -66,8 +66,8 @@ h1 {
 #display-output {
   color: white;
   font-size: 48px;
-  overflow: hidden;
-  white-space: nowrap;
+  /* overflow: hidden;
+  white-space: nowrap; */
   padding: 12px;
 }
 
@@ -75,9 +75,11 @@ h1 {
   color: lightgray;
   width: 200px;
   font-size: 15px;
-  overflow: hidden;
-  white-space: nowrap;
   padding: 1px;
+}
+
+#display-window {
+  position: relative;
 }
 
 #calc-equals {
@@ -98,7 +100,7 @@ h1 {
 
 /* MAC */
 
-.operator-mac {
+/* .operator-mac {
   background-color: orange;
   color: white;
 }
@@ -114,4 +116,4 @@ h1 {
 .mac-2, .mac-3, .mac-4, .mac-5 {
   background-color: rgb(225, 224, 225);
   color: black;
-}
+} */
