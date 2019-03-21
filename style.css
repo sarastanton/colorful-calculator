@@ -1,6 +1,6 @@
 body {
   font-family: 'Roboto', sans-serif;
-  background-color: seashell;
+  background-color: lightgray;
 }
 
 .calc-btn {
@@ -96,24 +96,28 @@ h1 {
 
 
 
-/* ----- COLOR THEMES ----- */
+/* ----- COLOR THEMES (DEFAULT) ----- */
 
-/* MAC */
-
-/* .operator-mac {
-  background-color: orange;
-  color: white;
+.row-1 {
+  background-color: rgb(208, 208, 208)'
 }
 
-.operator-mac:hover {
-  background-color: rgb(77, 76, 77);
+.row-2 {
+  background-color: rgb(220, 219, 220)'
 }
 
-.mac-1 {
-  background-color: rgb(208, 208, 208)
+.row-3 {
+  background-color: rgb(220, 219, 220)'
 }
 
-.mac-2, .mac-3, .mac-4, .mac-5 {
-  background-color: rgb(225, 224, 225);
-  color: black;
-} */
+.row-4 {
+  background-color: rgb(220, 219, 220)'
+}
+
+.row-5 {
+  background-color: rgb(220, 219, 220)'
+}
+
+.operator {
+  background-color: rgb(246, 135, 44)
+}
